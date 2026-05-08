@@ -810,18 +810,18 @@ function App() {
                       className="h-[180px] w-full rounded-[22px] object-contain"
                     />
                     <div>
-                      <p className="font-display text-xs font-extrabold uppercase tracking-[0.18em] text-[#1565ff]">Get In Touch</p>
-                      <h3 className="mt-2 font-display text-[2rem] font-extrabold leading-[1.08] tracking-[-0.04em] text-[#12316e] md:text-4xl">
+                      <p className="font-display text-sm font-extrabold uppercase tracking-[0.18em] text-[#1565ff] md:text-base">Get In Touch</p>
+                      <h3 className="mt-3 font-display text-[2.5rem] font-extrabold leading-[1.08] tracking-[-0.04em] text-[#12316e] md:text-5xl lg:text-6xl">
                         We Are Here To
                         <br />
                         Provide You Pure
                         <br />
                         &amp; Safe Water
                       </h3>
-                      <ul className="mt-5 space-y-2.5">
+                      <ul className="mt-7 space-y-3.5">
                         {contactItems.slice(0, 3).map((item) => (
-                          <li key={item.text} className="flex items-center gap-3 text-[0.95rem] font-bold text-[#12316e] md:text-[1.15rem]">
-                            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1565ff] text-xs text-white">
+                          <li key={item.text} className="flex items-center gap-4 text-[1.05rem] font-bold text-[#12316e] md:text-[1.35rem]">
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1565ff] text-sm text-white">
                               <i className={`fa-solid ${item.icon}`}></i>
                             </span>
                             <span>{item.text}</span>
