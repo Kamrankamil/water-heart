@@ -137,20 +137,42 @@ function App() {
     <div className="min-h-screen bg-white font-sans text-slate-800">
       <div
         aria-label="Loading website"
-        className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#031f59] transition-all duration-500 ${isLoaded ? 'pointer-events-none opacity-0' : 'opacity-100'}`}
+        className={`fixed inset-0 z-[100] flex items-center justify-center bg-[linear-gradient(135deg,#031f59_0%,#0a3a7a_100%)] transition-all duration-500 ${isLoaded ? 'pointer-events-none opacity-0' : 'opacity-100'}`}
       >
-        <div className="flex flex-col items-center gap-4 text-center text-white">
+        <div className="flex flex-col items-center gap-6 text-center text-white">
+          <div className="mb-2">
+            <img
+              src="/assets/Water Heart 5-liter jug with condensation.png"
+              alt="Water Heart bottle"
+              className="h-24 w-auto object-contain drop-shadow-[0_12px_24px_rgba(57,176,255,0.4)]"
+            />
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-white">
+              Water Heart
+            </h2>
+            <p className="mt-1 font-display text-xs font-bold uppercase tracking-[0.14em] text-[#bfe1ff]">
+              Pure • Hygienic • Healthy
+            </p>
+          </div>
+
           <div className="flex items-center gap-2">
             {[0, 150, 300].map((delay) => (
               <span
                 key={delay}
-                className="h-4 w-4 animate-bounce rounded-full bg-[#56b7ff]"
+                className="h-3 w-3 animate-bounce rounded-full bg-[#56b7ff]"
                 style={{ animationDelay: `${delay}ms` }}
               />
             ))}
           </div>
+
           <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-[#bfe1ff]">
             Purifying Your Experience...
+          </p>
+
+          <p className="mt-3 max-w-xs text-xs leading-5 text-[#a8d4ff]">
+            Japan's Premium Mineral Water Coming to Pakistan
           </p>
         </div>
       </div>
