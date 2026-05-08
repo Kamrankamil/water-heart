@@ -1,5 +1,28 @@
 import { useEffect, useMemo, useState } from 'react';
 import AOS from 'aos';
+import {
+  Award,
+  Baby,
+  Building2,
+  Camera,
+  CirclePlay,
+  CircleDollarSign,
+  Droplets,
+  Filter,
+  Globe,
+  GlassWater,
+  Headset,
+  Home,
+  Image as ImageIcon,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  ShieldCheck,
+  Sun,
+  TestTubeDiagonal,
+  Truck
+} from 'lucide-react';
 import 'aos/dist/aos.css';
 
 const containerClass = 'mx-auto w-full max-w-[1600px] px-4 sm:px-6 xl:px-10';
@@ -18,43 +41,43 @@ const navItems = [
 ];
 
 const heroFeatures = [
-  { icon: 'fa-droplet', label: '100% Pure Water' },
-  { icon: 'fa-shield-heart', label: 'Quality Tested' },
-  { icon: 'fa-truck-fast', label: 'Fast Delivery' },
-  { icon: 'fa-coins', label: 'Affordable Prices' }
+  { icon: Droplets, label: '100% Pure Water' },
+  { icon: ShieldCheck, label: 'Quality Tested' },
+  { icon: Truck, label: 'Fast Delivery' },
+  { icon: CircleDollarSign, label: 'Affordable Prices' }
 ];
 
 const offerCards = [
-  { icon: 'fa-droplet', title: 'Clean Purified Water', text: 'Multi-stage purification for clean and reliable daily hydration.' },
-  { icon: 'fa-building', title: 'Water for Offices', text: 'Reliable scheduled water supply for offices and institutions.' },
-  { icon: 'fa-house', title: 'Water for Homes', text: 'Safe mineral water delivered at your doorstep.' },
-  { icon: 'fa-bottle-water', title: 'Water Filling', text: 'Hygienic bottle and gallon filling with strict quality checks.' },
-  { icon: 'fa-baby', title: 'Water for Infants & Children', text: 'Balanced minerals for safer hydration for little ones.' },
-  { icon: 'fa-truck-fast', title: 'Water Gallon Delivery', text: 'Fast and dependable delivery supported by optimized routes.' },
-  { icon: 'fa-award', title: 'Water Heart 2.0 Halaal Water', text: 'Pakistan\'s first Halaal certified premium mineral water brand.' }
+  { icon: Droplets, title: 'Clean Purified Water', text: 'Multi-stage purification for clean and reliable daily hydration.' },
+  { icon: Building2, title: 'Water for Offices', text: 'Reliable scheduled water supply for offices and institutions.' },
+  { icon: Home, title: 'Water for Homes', text: 'Safe mineral water delivered at your doorstep.' },
+  { icon: GlassWater, title: 'Water Filling', text: 'Hygienic bottle and gallon filling with strict quality checks.' },
+  { icon: Baby, title: 'Water for Infants & Children', text: 'Balanced minerals for safer hydration for little ones.' },
+  { icon: Truck, title: 'Water Gallon Delivery', text: 'Fast and dependable delivery supported by optimized routes.' },
+  { icon: Award, title: 'Water Heart 2.0 Halaal Water', text: 'Pakistan\'s first Halaal certified premium mineral water brand.' }
 ];
 
 const processSteps = [
   {
-    icon: 'fa-filter',
+    icon: Filter,
     title: 'Filtration',
     text: 'Raw water passes through sediment and carbon filtration systems.',
     image: '/assets/gallery-2.png'
   },
   {
-    icon: 'fa-droplet',
+    icon: Droplets,
     title: 'RO Purification',
     text: 'Advanced RO membrane technology removes impurities and bacteria.',
     image: '/assets/gallery-3.png'
   },
   {
-    icon: 'fa-sun',
+    icon: Sun,
     title: 'UV Sterilization',
     text: 'UV sterilization and mineral balancing ensure healthy drinking water.',
     image: '/assets/gallery-4.png'
   },
   {
-    icon: 'fa-bottle-water',
+    icon: GlassWater,
     title: 'Bottle Filling',
     text: 'Hygienic bottle filling and quality testing before delivery.',
     image: '/assets/gallery-5.png'
@@ -85,11 +108,11 @@ const gallery = [
 ];
 
 const contactItems = [
-  { icon: 'fa-phone', text: '+92 315 8509804' },
-  { icon: 'fa-envelope', text: 'info@water-heart.com' },
-  { icon: 'fa-globe', text: 'www.water-heart.com' },
-  { icon: 'fa-location-dot', text: 'Karachi, Sindh, Pakistan' },
-  { icon: 'fa-clock', text: 'Mon-Sat: 8:00 AM - 10:00 PM' }
+  { icon: Phone, text: '+92 315 8509804' },
+  { icon: Mail, text: 'info@water-heart.com' },
+  { icon: Globe, text: 'www.water-heart.com' },
+  { icon: MapPin, text: 'Karachi, Sindh, Pakistan' },
+  { icon: Sun, text: 'Mon-Sat: 8:00 AM - 10:00 PM' }
 ];
 
 const footerLinks = [
@@ -184,7 +207,7 @@ function App() {
         aria-label="Chat on WhatsApp"
         className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25d366] text-xl text-white shadow-[0_18px_36px_rgba(37,211,102,0.35)] transition hover:-translate-y-1"
       >
-        <i className="fa-brands fa-whatsapp"></i>
+        <MessageCircle className="h-7 w-7" />
       </a>
 
       <header
@@ -310,17 +333,21 @@ function App() {
                 </div>
 
                 <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
-                  {heroFeatures.map((feature) => (
-                    <div
-                      key={feature.label}
-                      className="flex min-h-[82px] flex-col items-center justify-center gap-2 rounded-[16px] border border-[#dbe7fb] bg-white/92 px-2 py-3 text-center shadow-[0_14px_28px_rgba(23,73,151,0.08)] md:min-h-[86px] md:rounded-[18px] md:px-3 md:py-4"
-                    >
-                      <i className={`fa-solid ${feature.icon} text-base text-[#1565ff]`}></i>
-                      <span className="font-display text-[0.62rem] font-extrabold uppercase leading-[1.2] tracking-[0.02em] text-[#16386f] md:text-[0.7rem]">
-                        {feature.label}
-                      </span>
-                    </div>
-                  ))}
+                  {heroFeatures.map((feature) => {
+                    const FeatureIcon = feature.icon;
+
+                    return (
+                      <div
+                        key={feature.label}
+                        className="flex min-h-[82px] flex-col items-center justify-center gap-2 rounded-[16px] border border-[#dbe7fb] bg-white/92 px-2 py-3 text-center shadow-[0_14px_28px_rgba(23,73,151,0.08)] md:min-h-[86px] md:rounded-[18px] md:px-3 md:py-4"
+                      >
+                        <FeatureIcon className="h-4 w-4 text-[#1565ff]" strokeWidth={2.5} />
+                        <span className="font-display text-[0.62rem] font-extrabold uppercase leading-[1.2] tracking-[0.02em] text-[#16386f] md:text-[0.7rem]">
+                          {feature.label}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -350,9 +377,11 @@ function App() {
               <div className="md:col-span-4 lg:col-span-5" data-aos="fade-left">
                 <article className="rounded-[22px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm">
                   <div className="flex items-start gap-4">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 text-xl text-[#ffd34f]">
-                      <i className="fa-solid fa-shield-heart"></i>
-                    </span>
+                    <img
+                      src="/assets/protection water heart.png"
+                      alt="Water protection"
+                      className="h-14 w-14 rounded-full border border-white/20 bg-white/10 object-cover p-1"
+                    />
                     <div>
                       <h3 className="font-display text-lg font-extrabold uppercase tracking-[0.1em] text-[#ffd34f]">
                         Our Aim
@@ -485,22 +514,26 @@ function App() {
 
         <section id="services" className="py-12 md:py-16">
           <div className={containerClass}>
-            <SectionIntro kicker="What We Offer" title="Premium Water Services for Every Need" />
+            <SectionIntro kicker="What We Offer" title="Premium Water Services for Every Need" icon={Droplets} />
 
             <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-              {offerCards.map((card, idx) => (
-                <div key={card.title} data-aos="fade-up" data-aos-delay={idx * 60}>
-                  <article className="h-full rounded-[26px] border border-[#d9e7ff] bg-white p-6 shadow-[0_18px_36px_rgba(27,81,170,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(27,81,170,0.12)]">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#0b63f4,#39b0ff)] text-xl text-white shadow-[0_16px_30px_rgba(21,101,255,0.25)]">
-                      <i className={`fa-solid ${card.icon}`}></i>
-                    </span>
+              {offerCards.map((card, idx) => {
+                const Icon = card.icon;
+
+                return (
+                  <div key={card.title} data-aos="fade-up" data-aos-delay={idx * 60}>
+                    <article className="h-full rounded-[26px] border border-[#d9e7ff] bg-white p-6 shadow-[0_18px_36px_rgba(27,81,170,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(27,81,170,0.12)]">
+                      <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#0b63f4,#39b0ff)] text-white shadow-[0_16px_30px_rgba(21,101,255,0.25)]">
+                        <Icon className="h-7 w-7 text-white" strokeWidth={2.4} />
+                      </span>
                     <h4 className="mt-5 font-display text-xl font-extrabold tracking-[-0.03em] text-[#12316e]">
                       {card.title}
                     </h4>
                     <p className="mt-3 text-sm leading-7 text-slate-600 md:text-[0.95rem]">{card.text}</p>
-                  </article>
-                </div>
-              ))}
+                    </article>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -509,6 +542,7 @@ function App() {
           <div className={containerClass}>
             <div className="mb-12 text-center" data-aos="fade-up">
               <h3 className="font-display text-[1.9rem] font-black uppercase tracking-[-0.02em] text-[#12316e] sm:text-[2.15rem]">
+                <Truck className="mr-3 inline h-8 w-8 text-[#1565ff]" strokeWidth={2.4} />
                 Our Services
               </h3>
               <div className="mx-auto mt-2 h-[3px] w-14 rounded-full bg-[#1565ff]"></div>
@@ -517,47 +551,51 @@ function App() {
             <div className="grid gap-8 md:grid-cols-3">
               {[
                 {
-                  icon: 'fa-bottle-water',
+                  icon: GlassWater,
                   title: 'Drinking Water',
                   description: 'Premium purified drinking water available in multiple bottle sizes.',
                   image: '/assets/Water Heart product trio.png'
                 },
                 {
-                  icon: 'fa-truck',
+                  icon: Truck,
                   title: 'Home Delivery',
                   description: 'Fast and reliable delivery service for homes and offices.',
                   image: '/assets/waterheart truck supply.png'
                 },
                 {
-                  icon: 'fa-building',
+                  icon: Building2,
                   title: 'Commercial Supply',
                   description: 'Bulk water supply solutions for businesses and organizations.',
                   image: '/assets/image form water heart.png'
                 }
-              ].map((service, idx) => (
-                <div key={service.title} data-aos="fade-up" data-aos-delay={idx * 80}>
-                  <article className="flex h-full flex-col overflow-hidden rounded-[24px] border border-[#e0e7ff] bg-white shadow-[0_12px_24px_rgba(27,81,170,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(27,81,170,0.12)]">
-                    <div className="relative flex h-48 items-center justify-center bg-[#f5f9ff] md:h-56">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div className="flex flex-1 flex-col p-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#0b63f4,#39b0ff)] text-lg text-white shadow-[0_12px_24px_rgba(21,101,255,0.25)]">
-                        <i className={`fa-solid ${service.icon}`}></i>
+              ].map((service, idx) => {
+                const ServiceIcon = service.icon;
+
+                return (
+                  <div key={service.title} data-aos="fade-up" data-aos-delay={idx * 80}>
+                    <article className="flex h-full flex-col overflow-hidden rounded-[24px] border border-[#e0e7ff] bg-white shadow-[0_12px_24px_rgba(27,81,170,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(27,81,170,0.12)]">
+                      <div className="relative flex h-48 items-center justify-center bg-[#f5f9ff] md:h-56">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="h-full w-full object-cover object-center"
+                        />
                       </div>
-                      <h4 className="mt-4 font-display text-lg font-black uppercase tracking-[-0.02em] text-[#1565ff]">
-                        {service.title}
-                      </h4>
-                      <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 md:text-[0.95rem]">
-                        {service.description}
-                      </p>
-                    </div>
-                  </article>
-                </div>
-              ))}
+                      <div className="flex flex-1 flex-col p-6">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#0b63f4,#39b0ff)] text-white shadow-[0_12px_24px_rgba(21,101,255,0.25)]">
+                          <ServiceIcon className="h-6 w-6 text-white" strokeWidth={2.4} />
+                        </div>
+                        <h4 className="mt-4 font-display text-lg font-black uppercase tracking-[-0.02em] text-[#1565ff]">
+                          {service.title}
+                        </h4>
+                        <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 md:text-[0.95rem]">
+                          {service.description}
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -577,6 +615,7 @@ function App() {
             <div className="grid min-h-[380px] lg:grid-cols-[1fr_260px]">
               <div className="px-5 py-8 sm:px-8 lg:border-r lg:border-white/15 lg:px-14" data-aos="fade-right">
                 <h3 className="inline-block bg-[#1b5cd8] px-2 font-display text-[1.85rem] font-black uppercase leading-none tracking-[-0.03em] text-white sm:text-[2.5rem] lg:text-[3.1rem]">
+                  <CircleDollarSign className="mr-2 inline h-8 w-8 text-[#ffd34f]" strokeWidth={2.4} />
                   Fund Injection Plan
                 </h3>
                 <p className="mt-4 max-w-[760px] text-[0.9rem] leading-7 text-[#d6e7ff] sm:mt-6 sm:text-[1.02rem] sm:leading-8">
@@ -630,7 +669,7 @@ function App() {
               </div>
 
               <div data-aos="zoom-in-left">
-                <SectionIntro kicker="Who We Are" title="Trusted International Water Expertise" align="left" />
+                <SectionIntro kicker="Who We Are" title="Trusted International Water Expertise" align="left" icon={Building2} />
                 <p className="mt-5 text-base leading-8 text-slate-600 md:text-[1.02rem]">
                   Water Heart is the subsidiary of DTS Inc Japan established since 1994 with branches in Pakistan, Japan, and USA. Water Heart is Pakistan's first Halaal Certified Water brand providing premium quality mineral water using advanced Japanese purification technology.
                 </p>
@@ -643,15 +682,15 @@ function App() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   {[
-                    ['fa-certificate', 'Halaal Certified'],
-                    ['fa-vial-circle-check', 'Lab Tested'],
-                    ['fa-shield', 'Hygienic Facility']
-                  ].map(([icon, label]) => (
+                    [Award, 'Halaal Certified'],
+                    [TestTubeDiagonal, 'Lab Tested'],
+                    [ShieldCheck, 'Hygienic Facility']
+                  ].map(([Icon, label]) => (
                     <span
                       key={label}
                       className="inline-flex items-center gap-2 rounded-full border border-[#d9e7ff] bg-white px-4 py-2 text-sm font-semibold text-[#16407f] shadow-[0_10px_24px_rgba(21,101,255,0.06)]"
                     >
-                      <i className={`fa-solid ${icon} text-[#1565ff]`}></i>
+                      <Icon className="h-4 w-4 text-[#1565ff]" strokeWidth={2.4} />
                       {label}
                     </span>
                   ))}
@@ -676,6 +715,7 @@ function App() {
             <div className="relative mx-auto max-w-[1220px] z-10">
               <div className="text-center" data-aos="fade-up">
                 <h3 className="font-display text-[1.6rem] font-black uppercase tracking-[-0.02em] text-white sm:text-[2.25rem]">
+                  <Filter className="mr-3 inline h-8 w-8 text-[#8fd3ff]" strokeWidth={2.4} />
                   Our Purification Process
                 </h3>
                 <div className="mx-auto mt-3 h-[3px] w-14 rounded-full bg-white/90"></div>
@@ -689,7 +729,7 @@ function App() {
                     <article className="relative text-center">
                       <div className="mb-4 flex justify-center">
                         <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#39b0ff,#0b63f4)] text-xl text-white shadow-[0_12px_24px_rgba(57,176,255,0.3)]">
-                          <i className={`fa-solid ${step.icon}`}></i>
+                          <step.icon className="h-6 w-6" strokeWidth={2.4} />
                         </span>
                       </div>
                       <div className="relative mx-auto h-[156px] w-[156px] rounded-full border-[3px] border-white/80 bg-white/10 p-1 shadow-[0_18px_30px_rgba(0,22,62,0.25)]">
@@ -724,7 +764,7 @@ function App() {
             <div className="text-center" data-aos="fade-up">
               <div className="mb-3 flex justify-center">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#0b63f4,#39b0ff)] text-lg text-white shadow-[0_12px_24px_rgba(21,101,255,0.25)]">
-                  <i className="fa-solid fa-image"></i>
+                  <ImageIcon className="h-6 w-6" strokeWidth={2.4} />
                 </span>
               </div>
               <h3 className="font-display text-[1.9rem] font-black uppercase tracking-[-0.02em] text-[#12316e] sm:text-[2.15rem]">
@@ -751,48 +791,54 @@ function App() {
         <section className="bg-[linear-gradient(180deg,#f5f9ff,#ecf4ff)] py-12 md:py-16">
           <div className={containerClass}>
             <div className="mb-8 text-center" data-aos="fade-up">
-              <div className="mb-3 flex justify-center">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#0b63f4,#39b0ff)] text-lg text-white shadow-[0_12px_24px_rgba(21,101,255,0.25)]">
-                  <i className="fa-solid fa-vial"></i>
-                </span>
-              </div>
               <SectionIntro
                 kicker="Take a Water Test"
                 title="Feel The Difference in Every Sip"
                 description="Compare Water Heart with market brands and observe higher purity, smoother sweetness and lighter taste profile. Our process is designed for safer family hydration."
+                icon={TestTubeDiagonal}
               />
             </div>
 
             <div className="mt-8 overflow-hidden rounded-[28px] border border-[#d9e7ff] bg-white shadow-[0_18px_40px_rgba(27,81,170,0.08)]" data-aos="fade-up" data-aos-delay="90">
-              <div className="overflow-x-auto">
-                <table className="min-w-full text-left">
-                  <thead className="bg-[#1565ff] text-white">
-                    <tr>
-                      <th className="px-5 py-4 font-display text-xs font-extrabold uppercase tracking-[0.12em]">Quality Factor</th>
-                      <th className="px-5 py-4 font-display text-xs font-extrabold uppercase tracking-[0.12em]">Water Heart</th>
-                      <th className="px-5 py-4 font-display text-xs font-extrabold uppercase tracking-[0.12em]">Typical Market Water</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {compareRows.map((row, idx) => (
-                      <tr key={row[0]} className={idx % 2 === 0 ? 'bg-white' : 'bg-[#f7faff]'}>
-                        <td className="px-5 py-4 font-semibold text-[#12316e]">{row[0]}</td>
-                        <td className="px-5 py-4">
-                          <div className="flex items-center gap-2.5 text-slate-600">
-                            <i className="fa-solid fa-circle-check text-lg text-[#10b981]"></i>
-                            <span>{row[1]}</span>
-                          </div>
-                        </td>
-                        <td className="px-5 py-4">
-                          <div className="flex items-center gap-2.5 text-slate-600">
-                            <i className="fa-solid fa-circle-xmark text-lg text-[#ef4444]"></i>
-                            <span>{row[2]}</span>
-                          </div>
-                        </td>
+              <div className="grid items-center lg:grid-cols-[minmax(0,1fr)_220px]">
+                <div className="overflow-x-auto">
+                  <table className="min-w-full text-left">
+                    <thead className="bg-[#1565ff] text-white">
+                      <tr>
+                        <th className="px-5 py-4 font-display text-xs font-extrabold uppercase tracking-[0.12em]">Quality Factor</th>
+                        <th className="px-5 py-4 font-display text-xs font-extrabold uppercase tracking-[0.12em]">Water Heart</th>
+                        <th className="px-5 py-4 font-display text-xs font-extrabold uppercase tracking-[0.12em]">Typical Market Water</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {compareRows.map((row, idx) => (
+                        <tr key={row[0]} className={idx % 2 === 0 ? 'bg-white' : 'bg-[#f7faff]'}>
+                          <td className="px-5 py-4 font-semibold text-[#12316e]">{row[0]}</td>
+                          <td className="px-5 py-4">
+                            <div className="flex items-center gap-2.5 text-slate-600">
+                              <i className="fa-solid fa-circle-check text-lg text-[#10b981]"></i>
+                              <span>{row[1]}</span>
+                            </div>
+                          </td>
+                          <td className="px-5 py-4">
+                            <div className="flex items-center gap-2.5 text-slate-600">
+                              <i className="fa-solid fa-circle-xmark text-lg text-[#ef4444]"></i>
+                              <span>{row[2]}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="hidden h-full items-center justify-center bg-[linear-gradient(180deg,#f7fbff,#edf4ff)] lg:flex">
+                  <img
+                    src="/assets/splashing glass water heart.png"
+                    alt="Splashing glass of water"
+                    className="h-[190px] w-auto object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -803,26 +849,27 @@ function App() {
             <div className="grid items-stretch gap-6 lg:grid-cols-2">
               <div data-aos="fade-right">
                 <article className="h-full rounded-[24px] border border-[#d9e7ff] bg-white p-5 shadow-[0_18px_40px_rgba(27,81,170,0.08)] md:rounded-[30px] md:p-8">
-                  <div className="grid items-center gap-5 sm:grid-cols-[210px_1fr]">
+                  <div className="grid items-center gap-5 sm:grid-cols-[270px_1fr]">
                     <img
                       src="/assets/image form water heart.png"
                       alt="Water Heart contact"
-                      className="h-[180px] w-full rounded-[22px] object-contain"
+                      className="h-[230px] w-full rounded-[22px] object-contain md:h-[260px]"
                     />
                     <div>
-                      <p className="font-display text-sm font-extrabold uppercase tracking-[0.18em] text-[#1565ff] md:text-base">Get In Touch</p>
-                      <h3 className="mt-3 font-display text-[2.5rem] font-extrabold leading-[1.08] tracking-[-0.04em] text-[#12316e] md:text-5xl lg:text-6xl">
+                      <p className="font-display text-xs font-extrabold uppercase tracking-[0.18em] text-[#1565ff]">Get In Touch</p>
+                      <h3 className="mt-2 font-display text-[2rem] font-extrabold leading-[1.08] tracking-[-0.04em] text-[#12316e] md:text-4xl">
+                        <Headset className="mr-3 inline h-8 w-8 text-[#1565ff]" strokeWidth={2.4} />
                         We Are Here To
                         <br />
                         Provide You Pure
                         <br />
                         &amp; Safe Water
                       </h3>
-                      <ul className="mt-7 space-y-3.5">
+                      <ul className="mt-5 space-y-2.5">
                         {contactItems.slice(0, 3).map((item) => (
-                          <li key={item.text} className="flex items-center gap-4 text-[1.05rem] font-bold text-[#12316e] md:text-[1.35rem]">
-                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1565ff] text-sm text-white">
-                              <i className={`fa-solid ${item.icon}`}></i>
+                          <li key={item.text} className="flex items-center gap-3 text-[0.95rem] font-bold text-[#12316e] md:text-[1.15rem]">
+                            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1565ff] text-xs text-white">
+                              <item.icon className="h-3.5 w-3.5" strokeWidth={2.5} />
                             </span>
                             <span>{item.text}</span>
                           </li>
@@ -891,13 +938,13 @@ function App() {
                   We are committed to providing premium quality Japanese mineral water with calcium and Vitamin C for a healthy and better life.
                 </p>
                 <div className="mt-5 flex gap-3">
-                  {['fa-facebook-f', 'fa-instagram', 'fa-whatsapp', 'fa-youtube'].map((icon) => (
+                  {[Globe, Camera, MessageCircle, CirclePlay].map((Icon, idx) => (
                     <a
-                      key={icon}
+                      key={idx}
                       href="#"
                       className="flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white transition hover:-translate-y-0.5 hover:bg-white/25"
                     >
-                      <i className={`fa-brands ${icon}`}></i>
+                      <Icon className="h-5 w-5" strokeWidth={2.3} />
                     </a>
                   ))}
                 </div>
@@ -924,14 +971,14 @@ function App() {
                 </h5>
                 <ul className="mt-4 space-y-3 text-sm">
                   {[
-                    ['fa-phone', '+92 315 8509804'],
-                    ['fa-envelope', 'info@water-heart.com'],
-                    ['fa-globe', 'www.water-heart.com'],
-                    ['fa-location-dot', 'Karachi, Pakistan']
-                  ].map(([icon, label]) => (
+                    [Phone, '+92 315 8509804'],
+                    [Mail, 'info@water-heart.com'],
+                    [Globe, 'www.water-heart.com'],
+                    [MapPin, 'Karachi, Pakistan']
+                  ].map(([Icon, label]) => (
                     <li key={label} className="flex items-start gap-3">
                       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/12 text-white">
-                        <i className={`fa-solid ${icon}`}></i>
+                        <Icon className="h-4 w-4" strokeWidth={2.4} />
                       </span>
                       <span>{label}</span>
                     </li>
@@ -944,7 +991,7 @@ function App() {
                   Working Hours
                 </h5>
                 <div className="mt-4 flex items-center gap-3 text-sm text-white">
-                  <i className="fa-regular fa-clock text-2xl"></i>
+                  <Sun className="h-6 w-6" strokeWidth={2.4} />
                   <div>
                     <p>Mon - Sun</p>
                     <p>8:00 AM - 10:00 PM</p>
@@ -967,11 +1014,19 @@ function App() {
   );
 }
 
-function SectionIntro({ kicker, title, description, light = false, align = 'center' }) {
+function SectionIntro({ kicker, title, description, light = false, align = 'center', icon }) {
   const centered = align === 'center';
+  const Icon = icon;
 
   return (
     <div className={centered ? 'mx-auto max-w-3xl text-center' : ''}>
+      {Icon ? (
+        <div className={`mb-3 flex ${centered ? 'justify-center' : 'justify-start'}`}>
+          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#0b63f4,#39b0ff)] text-lg text-white shadow-[0_12px_24px_rgba(21,101,255,0.25)]">
+            <Icon className="h-6 w-6" strokeWidth={2.4} />
+          </span>
+        </div>
+      ) : null}
       <p className={`${sectionKickerClass} ${light ? 'text-[#8dc9ff]' : ''}`}>{kicker}</p>
       <h3 className={`mt-3 ${sectionTitleClass} ${light ? 'text-white' : ''}`}>{title}</h3>
       {description ? (
