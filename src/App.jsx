@@ -21,6 +21,7 @@ import {
   ShieldCheck,
   Sun,
   TestTubeDiagonal,
+  ThumbsUp,
   Truck
 } from 'lucide-react';
 import 'aos/dist/aos.css';
@@ -98,13 +99,22 @@ const compareRows = [
 ];
 
 const gallery = [
-  '/assets/gallery-1.png',
-  '/assets/gallery-2.png',
-  '/assets/gallery-3.png',
-  '/assets/gallery-4.png',
-  '/assets/gallery-5.png',
-  '/assets/gallery-6.png',
-  '/assets/gallery-7.png'
+  { image: '/assets/galleryimage1.png', title: 'Customers Waiting in Line' },
+  { image: '/assets/galleryimage2.png', title: 'Serving Our Valued Customers' },
+  { image: '/assets/galleryimage3.png', title: 'Advanced RO Filtration System' },
+  { image: '/assets/galleryimage4.png', title: 'Bottle Filling Process' },
+  { image: '/assets/galleryimage5.png', title: 'Pure Water, Healthy Life' },
+  { image: '/assets/galleryimage6.png', title: 'Clean & Hygienic Water Plant' },
+  { image: '/assets/galleryimage7.png', title: 'Healthy Water, Healthy Family' },
+  { image: '/assets/galleryimage8.png', title: 'Home Delivery & Reliable Service' }
+];
+
+const galleryHighlights = [
+  { icon: Droplets, title: '100% Pure', subtitle: '& Safe Water' },
+  { icon: ShieldCheck, title: 'Advanced', subtitle: 'Purification' },
+  { icon: TestTubeDiagonal, title: 'Healthy', subtitle: 'Minerals' },
+  { icon: ThumbsUp, title: 'Better', subtitle: 'Taste' },
+  { icon: Award, title: 'Quality You Can', subtitle: 'Trust' }
 ];
 
 const contactItems = [
@@ -773,17 +783,34 @@ function App() {
               <div className="mx-auto mt-2 h-[3px] w-14 rounded-full bg-[#1565ff]"></div>
             </div>
 
-            <div className="mt-7 flex gap-3 overflow-x-auto pb-2" data-aos="fade-up" data-aos-delay="70">
-              {gallery.slice(0, 6).map((img, idx) => (
-                <div key={img} className="shrink-0">
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-aos="fade-up" data-aos-delay="70">
+              {gallery.map((item, idx) => (
+                <article key={item.image} className="rounded-[14px]">
                   <img
-                    src={img}
-                    alt={`Water plant image ${idx + 1}`}
+                    src={item.image}
+                    alt={item.title}
                     loading="lazy"
-                    className="h-[168px] w-[220px] rounded-[14px] border border-[#dce7f9] object-cover shadow-[0_8px_20px_rgba(15,58,132,0.12)] md:h-[176px] md:w-[236px]"
+                    className="h-[180px] w-full rounded-[14px] border border-[#dce7f9] object-cover shadow-[0_8px_20px_rgba(15,58,132,0.12)] md:h-[230px]"
                   />
-                </div>
+                  <p className="mt-2 text-center font-display text-[1rem] font-bold text-[#193979]">
+                    {idx + 1}. {item.title}
+                  </p>
+                </article>
               ))}
+            </div>
+
+            <div className="mt-6 rounded-[18px] border border-[#d9e7ff] bg-[linear-gradient(90deg,#eef4ff,#e7f0ff)] px-4 py-4 md:px-6" data-aos="fade-up" data-aos-delay="110">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                {galleryHighlights.map((item) => (
+                  <div key={item.subtitle} className="flex items-center justify-center gap-3 text-[#1f3f83] lg:justify-start">
+                    <item.icon className="h-8 w-8 text-[#3156a5]" strokeWidth={2.2} />
+                    <p className="font-display text-[1.03rem] font-bold leading-[1.1]">
+                      <span className="block">{item.title}</span>
+                      <span className="block">{item.subtitle}</span>
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
