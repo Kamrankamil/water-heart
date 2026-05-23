@@ -63,25 +63,25 @@ const processSteps = [
     icon: Filter,
     title: 'Filtration',
     text: 'Raw water passes through sediment and carbon filtration systems.',
-    image: '/assets/gallery-2.png'
+    image: '/assets/galleryimage2old.png'
   },
   {
     icon: Droplets,
     title: 'RO Purification',
     text: 'Advanced RO membrane technology removes impurities and bacteria.',
-    image: '/assets/gallery-3.png'
+    image: '/assets/galleryimage6.png'
   },
   {
     icon: Sun,
     title: 'UV Sterilization',
     text: 'UV sterilization and mineral balancing ensure healthy drinking water.',
-    image: '/assets/gallery-4.png'
+    image: '/assets/galleryimage1.png'
   },
   {
     icon: GlassWater,
     title: 'Bottle Filling',
     text: 'Hygienic bottle filling and quality testing before delivery.',
-    image: '/assets/gallery-5.png'
+    image: '/assets/galleryimage4.png'
   }
 ];
 
@@ -100,8 +100,8 @@ const compareRows = [
 
 const gallery = [
   { image: '/assets/galleryimage1.png', title: 'Customers Waiting in Line' },
-  { image: '/assets/galleryimage2.png', title: 'Serving Our Valued Customers' },
-  { image: '/assets/galleryimage3.png', title: 'Advanced RO Filtration System' },
+  { image: '/assets/galleryimage2old.png', title: 'Serving Our Valued Customers' },
+  { image: '/assets/gallery-3.png', title: 'Advanced RO Filtration System' },
   { image: '/assets/galleryimage4.png', title: 'Bottle Filling Process' },
   { image: '/assets/galleryimage5.png', title: 'Pure Water, Healthy Life' },
   { image: '/assets/galleryimage6.png', title: 'Clean & Hygienic Water Plant' },
@@ -570,13 +570,13 @@ function App() {
                   icon: Truck,
                   title: 'Home Delivery',
                   description: 'Fast and reliable delivery service for homes and offices.',
-                  image: '/assets/waterheart truck supply.png'
+                  image: '/assets/galleryimage8.png'
                 },
                 {
                   icon: Building2,
                   title: 'Commercial Supply',
                   description: 'Bulk water supply solutions for businesses and organizations.',
-                  image: '/assets/image form water heart.png'
+                  image: '/assets/galleryimage4.png'
                 }
               ].map((service, idx) => {
                 const ServiceIcon = service.icon;
