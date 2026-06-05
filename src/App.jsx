@@ -119,8 +119,8 @@ const galleryHighlights = [
 
 const contactItems = [
   { icon: Phone, text: '+92 315 8509804' },
-  { icon: Mail, text: 'info@water-heart.com' },
-  { icon: Globe, text: 'www.water-heart.com' },
+  { icon: Mail, text: 'info@water-heart.vercel.app' },
+  { icon: Globe, text: 'https://water-heart.vercel.app/' },
   { icon: MapPin, text: 'Karachi, Sindh, Pakistan' },
   { icon: Sun, text: 'Mon-Sat: 8:00 AM - 10:00 PM' }
 ];
